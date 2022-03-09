@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<suite name="groups">
+ <!--   <test name="runAll">
+        <classes>
+            <class name="com.course.testng.groups.Class1"/>
+            <class name="com.course.testng.groups.Class2"/>
+            <class name="com.course.testng.groups.Class3"/>
+        </classes>
+    </test>-->
+
+
+    <test name="onlyRunStu">
+        <groups>
+            <run>
+                <include name="Class1"/>
+                <include name="Class2"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.course.testng.groups.Class1"/>
+            <class name="com.course.testng.groups.Class2"/>
+            <class name="com.course.testng.groups.Class3"/>
+        </classes>
+    </test>
+
+</suite>
