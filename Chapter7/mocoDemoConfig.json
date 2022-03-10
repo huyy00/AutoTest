@@ -1,0 +1,14 @@
+[
+  {
+    "description":"这是第一个moco配置文件",
+    "request": {
+      "uri": "/demo1"
+    },
+    "response": {
+      "text": "这是返回值"
+    }
+  }
+
+
+
+]
