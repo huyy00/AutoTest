@@ -1,0 +1,25 @@
+[
+  {
+    "description": "携带headers的post请求",
+    "request": {
+      "uri": "/postWithHeaders",
+      "method": "post",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "json": {
+        "name": "zhaoliuiuiuiuiu",
+        "age": "28"
+      }
+    },
+    "response": {
+      "json": {
+        "zhaoliu": "success",
+        "age": "28"
+      }
+    }
+
+
+  }
+
+]

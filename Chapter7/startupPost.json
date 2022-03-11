@@ -1,0 +1,26 @@
+[
+  {
+    "description": "这是不带参数的post请求",
+    "request": {
+      "uri": "/postDemo",
+      "method": "post"
+    },
+    "response": {
+      "text": "post请求成功（无参数）"
+    }
+  },
+  {
+    "description": "这是带参数的post请求",
+    "request": {
+      "uri": "/postDemoWithParmam",
+      "method": "post",
+      "forms": {
+        "name": "lisi",
+        "pwd": "456"
+      }
+    },
+    "response": {
+      "text": "post请求成功（带参数）21212"
+    }
+  }
+]

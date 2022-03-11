@@ -1,0 +1,37 @@
+[
+  {
+    "description": "携带cookies的get请求",
+    "request": {
+      "uri": "/getWithCookies",
+      "method": "get",
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "text": "携带cookies的get请求成功了444444"
+    }
+
+  },
+  {
+    "description": "携带cookies的post请求，携带参数",
+    "request": {
+      "uri": "/postWithCookies",
+      "method": "post",
+      "cookies": {
+        "login": "true"
+      },
+      "json": {
+        "name": "wangwu",
+        "pwd": "20"
+      }
+    },
+    "response": {
+      "status": 200,
+      "json": {
+        "text": "chenggong55555",
+        "status": 222
+      }
+    }
+  }
+]

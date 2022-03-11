@@ -5,7 +5,10 @@
       "uri": "/demo1"
     },
     "response": {
-      "text": "这是返回值"
+      "text": "这是返回值",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
     }
   }
 

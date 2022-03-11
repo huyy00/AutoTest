@@ -21,6 +21,7 @@ public class demo1 {
         Assert.assertEquals("qqq","qqq");
     }
 
+    @Test
     public void log(){
         Reporter.log("展示日志");
         throw new RuntimeException("抛出异常");

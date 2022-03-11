@@ -1,0 +1,32 @@
+[
+  {
+    "description": "带参数的get请求",
+    "request": {
+      "uri": "/getdemoWithParam",
+      "method": "get",
+      "queries": {
+        "name": "zhangsan",
+        "pwd": "123"
+      }
+    },
+    "response": {
+      "text": "get请求成功(带参数的)",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "不带参数的get请求",
+    "request": {
+      "uri": "/getdemo",
+      "method": "get"
+    },
+    "response": {
+      "text": "get请求成功（不带参数的）",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  }
+]
