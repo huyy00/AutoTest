@@ -1,5 +1,22 @@
 [
   {
+    "description": "返回cookies的请求",
+    "request": {
+      "uri": "/responseCookies",
+      "method": "get"
+    },
+    "response": {
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      },
+      "text": "返回cookies的请求成功777777777777777777",
+      "cookies": {
+        "login": "true",
+        "name": "zhangsansansansan"
+      }
+    }
+  },
+  {
     "description": "携带cookies的get请求",
     "request": {
       "uri": "/getWithCookies",
@@ -9,6 +26,9 @@
       }
     },
     "response": {
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      },
       "text": "携带cookies的get请求成功了444444"
     }
 
