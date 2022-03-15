@@ -11,8 +11,7 @@
       },
       "text": "返回cookies的请求成功777777777777777777",
       "cookies": {
-        "login": "true",
-        "name": "zhangsansansansan"
+        "login": "true"
       }
     }
   },
@@ -47,10 +46,9 @@
       }
     },
     "response": {
-      "status": 200,
       "json": {
         "text": "chenggong55555",
-        "status": 222
+        "status": "200"
       }
     }
   }

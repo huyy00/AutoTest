@@ -2,15 +2,16 @@ package com.course.httpclient;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.CookieStore;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.cookie.Cookie;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -64,7 +65,7 @@ public class MyCookiesForPost {
 
     //携带cookies访问post请求
     @Test(dependsOnMethods = "getCookies")
-    public void postWithCookies(){
+    public void postWithCookies() throws IOException {
         //获取uri
         String uri=bundle.getString("postWithCookies.uri");
         String testUrl=url+uri;
@@ -75,15 +76,26 @@ public class MyCookiesForPost {
         param.put("name","wangwu");
         param.put("pwd","20");
         //设置请求头信息 header
-        post.setHeader("Content-Type","application/json");
+        post.setHeader("content-type","application/json");
         //将参数信息添加到方法中
-        //声明一个对象来存储响应结果
+        StringEntity entity=new StringEntity(param.toString(),"utf-8");
+        post.setEntity(entity);
         //设置cookies信息
+        client=HttpClientBuilder.create().setDefaultCookieStore(cookieStore).build();
         //执行post方法
+        HttpResponse response=client.execute(post);
         //获取响应结果
+        String result=EntityUtils.toString(response.getEntity());
+        System.out.println("result:"+result);
         //处理结果 判断结果是否符合预期
-
-
+        //将返回的结果转换成json对象
+        JSONObject resultJson=new JSONObject(result);
+        //返回具体结果值
+        String text=resultJson.getString("text");
+        System.out.println("text的值："+text);
+        String status=resultJson.getString("status");
+        //判断结果值是否符合预期
+        Assert.assertEquals("200",status);
     }
 
 }

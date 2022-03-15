@@ -39,8 +39,8 @@ public class MyCookiesForGet {
         //声明http请求
         HttpGet get=new HttpGet(testUrl1);
         //获取cookies信息
-        this.cookieStore = new BasicCookieStore();
-        this.client = HttpClientBuilder.create().setDefaultCookieStore(cookieStore).build();
+        cookieStore = new BasicCookieStore();
+        client = HttpClients.custom().setDefaultCookieStore(cookieStore).build();
         //执行请求
         HttpResponse response= client.execute(get);
         //返回结果
@@ -57,14 +57,15 @@ public class MyCookiesForGet {
 
     //携带cookies信息访问get请求
     @Test(dependsOnMethods = "getCookies")
-    public void getWithCooikes() throws IOException {
+    public void getWithCookies() throws IOException {
         //获取uri
         String uri=bundle.getString("getWithCookies.uri");
         String testUrl2=this.url+uri;
         //声明http请求
         HttpGet get=new HttpGet(testUrl2);
         //执行请求
-        HttpResponse response=this.client.execute(get);
+        client= HttpClientBuilder.create().setDefaultCookieStore(this.cookieStore).build();
+        HttpResponse response=client.execute(get);
         //获取返回的状态码
         int statusCode=response.getStatusLine().getStatusCode();
         System.out.println("状态码是："+statusCode);
